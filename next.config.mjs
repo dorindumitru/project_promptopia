@@ -7,6 +7,15 @@ const nextConfig = {
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
+  async redirects() {
+    return [
+      {
+        permanent: true,
+        source: "/302",
+        destination: "https://httpstat.us/302",
+      },
+    ];
+  },
   webpack(config) {
     config.experiments = {
       ...config.experiments,
